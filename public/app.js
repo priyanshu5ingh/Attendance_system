@@ -4,7 +4,7 @@ class AttendanceSystem {
     constructor() {
         this.token = localStorage.getItem('token');
         this.user = JSON.parse(localStorage.getItem('user') || '{}');
-        this.baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api' : '/.netlify/functions/server/api';
+        this.baseURL = window.location.hostname === 'localhost' ? 'http://localhost:3001/api' : '/api';
         this.init();
     }
 
