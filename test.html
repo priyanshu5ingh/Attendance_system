@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Server Test</h1>
+    <p>If you can see this, the server is working!</p>
+    <script>
+        console.log('Test page loaded');
+        
+        // Test API call
+        fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: 'admin@company.com', password: 'admin123' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('API test result:', data);
+            document.body.innerHTML += '<p>API working: ' + (data.token ? 'YES' : 'NO') + '</p>';
+        })
+        .catch(error => {
+            console.error('API test failed:', error);
+            document.body.innerHTML += '<p>API test failed: ' + error.message + '</p>';
+        });
+    </script>
+</body>
+</html>
