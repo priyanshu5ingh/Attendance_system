@@ -19,8 +19,5 @@
       "src": "/(.*)",
       "dest": "/public/$1"
     }
-  ],
-  "env": {
-    "JWT_SECRET": "@jwt_secret"
-  }
+  ]
 }
